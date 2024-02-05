@@ -2,27 +2,37 @@
 import Layout from "../layouts/Layout.astro";
 import '../styles/register-login.css';
 ---
-<Layout title="Registro">
-    <main class="form-signin d-flex justify-content-center align-items-center">
-        <form class="text-center">
-            <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Create an account</h1>
-
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                <label for="floatingName">Your Name</label>
-            </div>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-                <label for="floatingEmail">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-
-            <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
-        </form>
-    </main>
+<Layout title="Inicio de Sesión">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">¡Registrate y descubre un mundo de posibilidades personalizadas!</h1>
+            <p class="col-lg-10 fs-4">Registrarse es el camino hacia una experiencia única. Accede y desbloquea beneficios exclusivos.</p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Fernando">
+                <label for="floatingInput">Nombre</label>
+              </div>  
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Dirección de email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                <label for="floatingPassword">Contraseña</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Recordar selección
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+              <hr class="my-4">
+              <small class="text-body-secondary">Pulsando registrarse, aceptas los terminos de uso.</small>
+            </form>
+          </div>
+        </div>
+      </div>
 </Layout>

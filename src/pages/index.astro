@@ -1,47 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Carrousel from '../components/Carrousel.astro';
-import Card from '../components/Card.astro';
-import type { Props as CardType } from '../components/Card.astro';
-const cards: CardType[] = [
-  {
-    img: '/img/placeholder1.jpg',
-    alt: 'Product image',
-    title: 'Product 1',
-    text: 'Body text for product',
-    href: 'http://google.com',
-    linkText: 'Read more',
-  },
-  {
-    img: '/img/placeholder1.jpg',
-    alt: 'Product image',
-    title: 'Product 2',
-    text: 'Body text for product',
-    href: 'http://google.com',
-    linkText: 'Read more',
-  },
-  {
-    img: '/img/placeholder1.jpg',
-    alt: 'Product image',
-    title: 'Product 3',
-    text: 'Body text for product',
-    href: 'http://google.com',
-    linkText: 'Read more',
-  },
-];
+import Heroe from '../components/Heroe.astro';
 ---
 
 <Layout title="Welcome to Travel Roulette.">
-	<Carrousel />
-	<div class="container">
-		<div class="row row-cols-1 row-cols-md-3">
-		  {
-			cards.map((card) => (
-			  <div class="col">
-				<Card {...card} />
-			  </div>
-			))
-		  }
-		</div>
-	  </div>
+  <Heroe />
 </Layout>

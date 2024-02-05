@@ -1,13 +1,19 @@
 ---
-
+const socialIcons = [
+  { icon: "bi-facebook", link: "#" },
+  { icon: "bi-twitter", link: "#" },
+  { icon: "bi-instagram", link: "#" },
+];
 ---
-<div class="container">
-  <footer class="w-100 fixed-bottom d-flex align-items-center justify-content-center flex-wrap bg-light">
-    <p class="fs-5 px-3 pt-3">Travel Roulette. &copy; Todos Los Derechos Reservados 2024</p>
-    <div id="iconos">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>  
-    </div>
-  </footer>
-</div>
+
+<footer class="w-100 fixed-bottom d-flex align-items-center justify-content-center flex-wrap bg-light">
+  <p class="fs-5 px-3 pt-3">Travel Roulette. &copy; Todos Los Derechos Reservados 2024</p>
+  
+  <div id="iconos">
+    {socialIcons.map((socialIcon) => (
+      <a href={socialIcon.link} class="text-dark me-3">
+        <i class={`bi ${socialIcon.icon}`}></i>
+      </a>
+    ))}
+  </div>
+</footer>
