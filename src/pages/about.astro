@@ -1,16 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
-    
+import Card from '../components/Card.astro';
+
+const teamMembers = [
+  { name: "Sergio Hernandez", img: "./assets/img/sergio.jpg", alt: "Sergio", role: "Joven emprendedor", github: "#" },
+  { name: "Marcos Cobo", img: "./assets/img/marcos.jpg", alt: "Marcos", role: "Desarrollador apasionado", github: "#" },
+  { name: "Javier Galan", img: "./assets/img/javier.jpg", alt: "Javier", role: "Tecnólogo Viajero", github: "#" },
+];
+
 ---
+
 <Layout title="Sobre nosotros">
-    <section>
-        <div class="container w-50 m-auto text-center" id="equipo">
-            <h1 class="mb-5 fs-2">Equipo pequeño con <span class="text-primary">resultados Grandes</span>.</h1>
-            <p class="fs-4 ">Siempre buscamos las personas adecuadas para que trabajen con nosotros. Si te sientes listo para este reto, te esperamos para que te unas a nosotros.</p>
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/favicon.svg" alt="j" width="72" height="57">
+        <h1 class="display-5 fw-bold text-body-emphasis">¡Bienvenidos a Travel Roulette!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Somos tres jóvenes emprendedores y estamos emocionados de compartir nuestra visión de viajes extraordinarios por el mundo.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+          </div>
         </div>
+    </div>
     
-        <div class="mt-5 text-center">
-            <img id="img-equipo" src="./img/equipo.jpg" alt="equipo">
+    <div class="b-example-divider"></div>
+    <div class="container py-3">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            {teamMembers.map((member) => (
+                <Card
+                  title={member.name}
+                  img={member.img}
+                  alt={member.alt}
+                  text={member.role}
+                  href={member.github}
+                  linkText="GitHub"
+                />))
+            }
         </div>
-    </section>
+    </div>
 </Layout>
+<style>
+.container {
+  max-width: 960px;
+}
+</style>
