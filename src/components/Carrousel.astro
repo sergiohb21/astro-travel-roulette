@@ -4,14 +4,14 @@ import type { CarouselSlideType } from 'astro-bootstrap';
 import '../styles/carousel.css'
 
 const slides: CarouselSlideType[] = [
-  { img: 'public/assets/img/carousel-1.jpg', alt: 'Imagen de una mano sosteniendo una bola del mundo', active: true },
-  { img: 'public/assets/img/carousel-2.jpg', alt: 'Imagen de un mapa y una mano apuntando un destino' },
-  { img: 'public/assets/img/carousel-3.jpg', alt: 'Imagen de una pareja viajando en moto' },
+  { img: 'assets/img/carousel-1.jpg', alt: 'Imagen de una mano sosteniendo una bola del mundo', active: true },
+  { img: 'assets/img/carousel-2.jpg', alt: 'Imagen de un mapa y una mano apuntando un destino' },
+  { img: 'assets/img/carousel-3.jpg', alt: 'Imagen de una pareja viajando en moto' },
 ];
 
 const id = 'carouselInicio';
 ---
-<div class="container-fluid rounded g-0 mb-3 example-container copy-button-wrapper">
+<div class="container-fluid rounded g-0 mb-3 copy-button-wrapper">
   <div class="row p-3">
     <Carousel {id} fade>
       <Carousel.Indicators {id} {slides} />
