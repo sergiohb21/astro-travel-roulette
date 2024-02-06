@@ -1,0 +1,39 @@
+---
+const {backgroundImage,option} = Astro.props;
+export interface Props {
+  backgroundImage: string;
+  option:string;
+}
+---
+
+<div class="col">
+    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={`background-image: url('${backgroundImage}');`} data-bs-toggle="tooltip" data-bs-placement="top" title="Click para resaltar">
+      <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{option}</h3>
+      </div>
+    </div>
+</div>          
+
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(function(card) {
+          card.addEventListener('click', function() {
+              // Quita la clase 'highlight' de todos los cards
+              cards.forEach(function(card) {
+                  card.classList.remove('highlight');
+              });
+              // Agrega la clase 'highlight' solo al card que se hizo clic
+              this.classList.add('highlight');
+          });
+      });
+  });
+</script>
+
+ <style>
+  .highlight {
+    border: 5px solid #007bff; 
+    transition: border-color 0.3s ease;
+  }
+ </style>

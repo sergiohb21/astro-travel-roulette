@@ -1,40 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from '../components/Card.astro';
+import Card from '../components/CardPersona.astro';
 
 const teamMembers = [
-  { name: "Sergio Hernandez", img: "./assets/img/sergio.jpg", alt: "Sergio", role: "Joven emprendedor", github: "#" },
-  { name: "Marcos Cobo", img: "./assets/img/marcos.jpg", alt: "Marcos", role: "Desarrollador apasionado", github: "#" },
-  { name: "Javier Galan", img: "./assets/img/javier.jpg", alt: "Javier", role: "Tecnólogo Viajero", github: "#" },
+  { name: "Sergio Hernández", img: "./assets/img/no-logo.png", alt: "Sergio - Desarrollador Web", role: "Desarrollador Web", github: "#" },
+  { name: "Marcos Cobo", img: "./assets/img/no-logo.png", alt: "Marcos - Desarrollador Web", role: "Desarrollador Web", github: "#" },
+  { name: "Javier Galan", img: "./assets/img/no-logo.png", alt: "Javier - Desarrollador Web", role: "Desarrollador Web", github: "#" },
 ];
 
 ---
 
 <Layout title="Sobre nosotros">
-    <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="/favicon.svg" alt="j" width="72" height="57">
-        <h1 class="display-5 fw-bold text-body-emphasis">¡Bienvenidos a Travel Roulette!</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Somos tres jóvenes emprendedores y estamos emocionados de compartir nuestra visión de viajes extraordinarios por el mundo.</p>
-        </div>
-    </div>
-    
-    <div class="b-example-divider"></div>
-    <div class="container py-3">
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            {teamMembers.map((member) => (
-                <Card
-                  title={member.name}
-                  img={member.img}
-                  alt={member.alt}
-                  text={member.role}
-                  href={member.github}
-                  linkText="GitHub"
-                />))
-            }
-        </div>
-    </div>
+  <div class="px-4 py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="Logo Travel Roulett" width="72" height="57">
+      <h1 class="display-5 fw-bold text-body-emphasis">Descubre quiénes somos en Travel Roulett</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Somos un equipo apasionado de jóvenes emprendedores dedicados a ofrecerte experiencias de viaje únicas y emocionantes.</p>
+      </div>
+  </div>
+  
+  <div class="b-example-divider"></div>
+  <div class="container py-3">
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          {teamMembers.map((member) => (
+              <Card
+                title={member.name}
+                img={member.img}
+                alt={member.alt}
+                text={member.role}
+                href={member.github}
+                linkText="GitHub"
+              />
+          ))}
+      </div>
+  </div>
 </Layout>
+
 <style>
 .container {
   max-width: 960px;

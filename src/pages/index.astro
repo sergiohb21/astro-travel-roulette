@@ -1,8 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Heroe from '../components/Heroe.astro';
+import HeroeDark from '../components/HeroeDark.astro';
+import Features from '../components/Features.astro';
 ---
 
 <Layout title="Welcome to Travel Roulette.">
-  <Heroe />
+  <Heroe 
+    img="assets/img/collage.webp"
+    alt="Imagen de una pareja viajando en moto"
+    title="Descubre el Mundo con Travell Roullet"
+    text="¡Embárcate en una aventura única y sin límites! Deja que la emoción te guíe mientras exploras destinos sorprendentes y creas recuerdos inolvidables."
+    btnPrimaryText="Comienza tú Aventura"
+    btnPrimaryLink="/explora"
+  />
+
+  <HeroeDark 
+    title="Planifica tú Próxima Aventura"
+    text="Con Travell Roullet, no hay límites para tus viajes. Personaliza tu experiencia según tus preferencias y déjate llevar por la emoción de lo desconocido."
+    btnPrimaryText="Contacto"
+    btnPrimaryLink="/contact"
+  />
+
+
+  <Features 
+  content="Sumérgete en una experiencia de viaje incomparable con Travell Roullet. Explora destinos emocionantes, personaliza cada detalle y déjate llevar por la emoción de lo desconocido."
+  subcontent="Descubre cómo podemos convertir tu próxima aventura en una experiencia inolvidable."
+  btnText="Sobre nosotros"
+  btnLink="/about"
+  features={[
+    {icon: "bi bi-globe", title: "Personalización Total", content: "Adapta cada aspecto de tu viaje a tus gustos y necesidades. Desde el destino hasta el alojamiento, tienes el control completo."},
+    {icon: "bi bi-calendar-check", title: "Planificación sin Estrés", content: "Olvida las preocupaciones de la planificación. Con Travell Roullet, todo está organizado para ti, desde la reserva hasta las actividades."},
+    {icon: "bi bi-heart", title: "Emoción Garantizada", content: "Experimenta la emoción de explorar destinos desconocidos. Nuestra aplicación te lleva a lugares fuera de lo común, creando momentos inolvidables."},
+    {icon: "bi bi-compass", title: "Libertad para Explorar", content: "Descubre nuevos horizontes sin restricciones. Con Travell Roullet, tu aventura no tiene límites ni fronteras."}
+  ]}
+/>
+
+
 </Layout>
