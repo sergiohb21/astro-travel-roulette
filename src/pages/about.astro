@@ -3,16 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Card from '../components/CardPersona.astro';
 
 const teamMembers = [
-  { name: "Sergio Hernández", img: "./assets/img/no-logo.png", alt: "Sergio - Desarrollador Web", role: "Desarrollador Web", github: "#" },
-  { name: "Marcos Cobo", img: "./assets/img/no-logo.png", alt: "Marcos - Desarrollador Web", role: "Desarrollador Web", github: "#" },
-  { name: "Javier Galan", img: "./assets/img/no-logo.png", alt: "Javier - Desarrollador Web", role: "Desarrollador Web", github: "#" },
+  { name: "Sergio Hernández", img: "../assets/img/no-logo.png", alt: "Sergio - Desarrollador Web", role: "Desarrollador Web", github: "#" },
+  { name: "Marcos Cobo", img: "../assets/img/no-logo.png", alt: "Marcos - Desarrollador Web", role: "Desarrollador Web", github: "#" },
+  { name: "Javier Galan", img: "../assets/img/no-logo.png", alt: "Javier - Desarrollador Web", role: "Desarrollador Web", github: "#" },
 ];
 
 ---
 
 <Layout title="Sobre nosotros">
   <div class="px-4 py-5 my-5 text-center">
-      <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="Logo Travel Roulett" width="72" height="57">
+      <img class="d-block mx-auto mb-4" src="../assets/img/logo.png" alt="Logo Travel Roulett" width="72" height="57">
       <h1 class="display-5 fw-bold text-body-emphasis">Descubre quiénes somos en Travel Roulette</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Somos un equipo apasionado de jóvenes emprendedores dedicados a ofrecerte experiencias de viaje únicas y emocionantes.</p>
