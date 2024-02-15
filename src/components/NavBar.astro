@@ -1,44 +1,78 @@
 ---
-  const navLinks = [
+  const navData = [
   { text: 'Inicio', href: '/' },
   { text: 'Explora', href: '/explora' },
   { text: 'Sobre nosotros', href: '/about' },
   { text: 'Contacto', href: '/contact' },
 ];
 
+
 //Cambiar lógica
-const isLoggedIn = false; 
+const isLoggedIn = false;
 const userName = "Sergio"; 
 ---
-<div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <div class="col-md-3 mb-2 mb-md-0">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-              <img src="./assets/img/logo.png" alt="Logo Travel Roulette" width="40" height="32">
-              <span>Travel Roulette</span>
-        </a>
-      </div>
-
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        {navLinks.map((link) => (
-          link.href == '/' 
-            ? <li><a href={link.href} class="nav-link px-2 link-secondary">{link.text}</a></li>
-            : <li><a href={link.href} class="nav-link px-2">{link.text}</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="./assets/img/logo.png" alt="Logo Travel Roulette" width="40" height="32">
+      <span>Travel Roulette</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        {navData.map((link) => (
+          <li class="nav-item">
+            <a href={link.href} class="nav-link">{link.text}</a>
+          </li>
         ))}
       </ul>
-
-      <div class="col-md-4 text-end">
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
         {isLoggedIn ? (
-          <div class="d-flex align-items-center">
-            <i class="bi bi-person-fill me-2"></i>
-            <p class="me-2">Hola, {userName}</p>
-          </div>
+          <li class="nav-item">
+            <p class="nav-link mb-0">Hola, {userName}</p>
+          </li>
         ) : (
-          <div>
-            <a href="/login" class="btn btn-outline-primary me-2">Inicia Sesión</a>
-            <a href="/register" class="btn btn-primary">Registrate</a>
-          </div>
+          <li class="nav-item">
+            <a href="/login" class="nav-link">Inicia Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="/register" class="nav-link">Regístrate</a>
+          </li>
         )}
-      </div>
-    </header>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<script>
+  // Obtener la URL actual
+const currentUrl = window.location.pathname;
+
+// Obtener todos los elementos de enlace de la barra de navegación
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Iterar sobre los enlaces y comparar la URL actual con sus enlaces
+navLinks.forEach(link => {
+  // Obtener la URL del enlace
+  const linkUrl = link.getAttribute('href');
+  
+  // Comparar la URL actual con la URL del enlace
+  if (linkUrl === currentUrl) {
+    // Si son iguales, añadir la clase 'active' al enlace
+    link.classList.add('active');
+  }
+});
+</script>
+
+<style>
+  /* Estilos para el enlace activo */
+  .navbar-nav .nav-link.active {
+    font-weight: bold; /* Hace que el texto del enlace activo sea más grueso */
+    color: #007bff; /* Cambia el color del texto del enlace activo */
+  }
+  
+  </style>
