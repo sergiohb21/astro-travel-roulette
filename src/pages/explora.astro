@@ -26,7 +26,8 @@ const steps = [
             options: [
                 { label: "Fin de semana", backgroundImage: "./assets/img/card/time-bg.jpg" },
                 { label: "1 semana", backgroundImage: "./assets/img/card/time-bg.jpg" },
-                { label: "2 semanas o más", backgroundImage: "./assets/img/card/time-bg.jpg" }
+                { label: "2 semanas o más", backgroundImage: "./assets/img/card/time-bg.jpg" },
+                { label: "1 mes o más", backgroundImage: "./assets/img/card/time-bg.jpg" }
             ]
         },
         {
@@ -53,17 +54,22 @@ const steps = [
 <Layout title="Explora">
     <div class="container px-4 py-5 mt-5" id="custom-cards">
         {steps.map((step)=> 
-            <h2 class="pb-2">{step.question}</h2>
-            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-                {step.options.map((option)=>
-                    <CardForm 
-                    option={option.label}
-                    backgroundImage={option.backgroundImage}
-                />
-                )}
+            <div>
+                <h2 class="pb-2">{step.question}</h2>
+                <div class="row align-items-stretch g-4 py-5">
+                    {step.options.map((option)=>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <CardForm 
+                                option={option.label}
+                                backgroundImage={option.backgroundImage}
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
         )}
     </div>
+    
     
     <div class="d-flex gap-2 justify-content-center py-5">
         <button class="btn btn-primary d-inline-flex align-items-center" type="button">
@@ -84,3 +90,5 @@ const steps = [
       <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
     </symbol>
   </svg>
+
+  
