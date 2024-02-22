@@ -51,7 +51,8 @@ const userName = "Sergio";
 
 <script>
   // Obtener la URL actual
-const currentUrl = window.location.href;
+const currentUrl = window.location.pathname + "/";
+console.log(currentUrl);
 // Obtener todos los elementos de enlace de la barra de navegación
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -59,6 +60,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
   // Obtener la URL del enlace
   const linkUrl = link.getAttribute('href');
+  console.log(linkUrl);
   
   // Comparar la URL actual con la URL del enlace
   if (linkUrl === currentUrl) {
