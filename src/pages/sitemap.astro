@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Mapa del sitio">
+  <div class="container px-4 py-5">
+    <h1 class="mt-5 mb-4">Mapa del Sitio</h1>
+    <div class="row">
+      <div class="col">
+        <ul class="list-group sitemap-tree">
+          <li class="list-group-item">
+            <a href="/" class="text-decoration-none"><i class="bi bi-house-door"></i> Inicio</a>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="/about" class="text-decoration-none"><i class="bi bi-info-circle"></i> Acerca de</a></li>
+              <li class="list-group-item"><a href="/contact" class="text-decoration-none"><i class="bi bi-envelope"></i> Contacto</a></li>
+              <li class="list-group-item"><a href="/explora" class="text-decoration-none"><i class="bi bi-binoculars"></i> Explora</a></li>
+              <li class="list-group-item"><a href="/login" class="text-decoration-none"><i class="bi bi-door-open"></i> Iniciar Sesión</a></li>
+              <li class="list-group-item"><a href="/register" class="text-decoration-none"><i class="bi bi-person-plus"></i> Registrarse</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>
