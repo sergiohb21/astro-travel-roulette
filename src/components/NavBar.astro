@@ -1,9 +1,9 @@
 ---
   const navData = [
   { text: 'Inicio', href: '/' },
-  { text: 'Explora', href: '/explora' },
-  { text: 'Sobre nosotros', href: '/about' },
+  { text: 'Acerca de', href: '/about' },
   { text: 'Contacto', href: '/contact' },
+  { text: 'Explora', href: '/explora' },
   { text: 'Mapa del sitio', href: '/sitemap' }
 ];
 
@@ -41,7 +41,7 @@ const userName = "Sergio";
             <a href="/login" class="nav-link">Inicia Sesión</a>
           </li>
           <li class="nav-item">
-            <a href="/register" class="nav-link">Regístrate</a>
+            <a href="/register" class="nav-link">Regístrarse</a>
           </li>
         )}
       </ul>
@@ -51,8 +51,8 @@ const userName = "Sergio";
 
 <script>
   // Obtener la URL actual
-const currentUrl = window.location.pathname;
-
+const currentUrl = window.location.href;
+console.log(currentUrl);
 // Obtener todos los elementos de enlace de la barra de navegación
 const navLinks = document.querySelectorAll('.nav-link');
 
