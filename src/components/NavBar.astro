@@ -57,13 +57,18 @@ console.log("1-: ",currentUrl);
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Iterar sobre los enlaces y comparar la URL actual con sus enlaces
-navLinks.forEach(link => {
+navLinks.forEach((link, index) => {
   // Obtener la URL del enlace
-  const linkUrl = link.getAttribute('href') + "/";
+  let linkUrl = null;
+  if(index == 0){
+    linkUrl = link.getAttribute('href')
+  }else{
+    linkUrl = link.getAttribute('href') + "/";
+  }
   console.log("2: ",linkUrl);
   
   // Si la URL actual es "/" y el enlace también es "/", o si la URL actual coincide con la URL del enlace
-  if ((currentUrl === "" && linkUrl === "/") || linkUrl === currentUrl) {
+  if ((currentUrl === "/" && linkUrl === "/") || linkUrl === currentUrl) {
     // Si son iguales, añadir la clase 'active' al enlace
     link.classList.add('active');
   }
