@@ -63,7 +63,7 @@ navLinks.forEach(link => {
   console.log("2: ",linkUrl);
   
   // Si la URL actual es "/" y el enlace también es "/", o si la URL actual coincide con la URL del enlace
-  if ((currentUrl === "/" && linkUrl === "/") || linkUrl === currentUrl) {
+  if ((currentUrl === "" && linkUrl === "/") || linkUrl === currentUrl) {
     // Si son iguales, añadir la clase 'active' al enlace
     link.classList.add('active');
   }
