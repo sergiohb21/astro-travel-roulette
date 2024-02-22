@@ -50,30 +50,31 @@ const userName = "Sergio";
 </nav>
 
 <script>
-  // Obtener la URL actual
-const currentUrl = window.location.pathname;
-console.log("1-: ",currentUrl);
+  // Función para normalizar una URL
+function normalizeUrl(url) {
+  // Remover la barra diagonal al final de la URL, si existe
+  return url.endsWith("/") ? url.slice(0, -1) : url;
+}
+
+// Obtener la URL actual
+const currentUrl = normalizeUrl(window.location.pathname);
+
 // Obtener todos los elementos de enlace de la barra de navegación
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Iterar sobre los enlaces y comparar la URL actual con sus enlaces
-navLinks.forEach((link, index) => {
-  // Obtener la URL del enlace
-  let linkUrl = null;
-  if(index == 0){
-    linkUrl = link.getAttribute('href')
-  }else{
-    linkUrl = link.getAttribute('href') + "/";
-  }
-  console.log("2: ",linkUrl);
+navLinks.forEach(link => {
+  // Obtener la URL del enlace y normalizarla
+  const linkUrl = normalizeUrl(link.getAttribute('href'));
   
-  // Si la URL actual es "/" y el enlace también es "/", o si la URL actual coincide con la URL del enlace
-  if ((currentUrl === "/" && linkUrl === "/") || linkUrl === currentUrl) {
+  // Comparar la URL actual con la URL del enlace
+  if (linkUrl === currentUrl) {
     // Si son iguales, añadir la clase 'active' al enlace
     link.classList.add('active');
   }
 });
 </script>
+
 
 <style>
   /* Estilos para el enlace activo */
