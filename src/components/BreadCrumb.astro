@@ -1,0 +1,34 @@
+<br><br>
+<nav class="mt-5 ml-3 custom-margin-left" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+  </ol>
+</nav>
+
+<script>
+  // Obtener el elemento <ol> con la clase "breadcrumb"
+  var breadcrumbList = document.querySelector('.breadcrumb');
+  
+  // Obtener la página actual
+  var currentPage = document.title;
+
+  // Crear un nuevo elemento <li> para el nuevo enlace
+  var newItem = document.createElement('li');
+  newItem.classList.add('breadcrumb-item');
+  newItem.textContent = currentPage;
+
+  // Marcar el nuevo elemento como activo
+  newItem.classList.add('active');
+  newItem.setAttribute('aria-current', 'page');
+
+  // Agregar el nuevo elemento <li> al elemento <ol> existente
+  breadcrumbList.appendChild(newItem);
+</script>
+
+
+<style>
+    .custom-margin-left {
+  margin-left: 20px; /* Puedes ajustar el valor según tus necesidades */
+}
+
+</style>
