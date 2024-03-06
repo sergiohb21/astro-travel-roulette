@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Heroe from '../components/Heroe.astro';
 import HeroeDark from '../components/HeroeDark.astro';
 import Features from '../components/Features.astro';
+import HeroeAccesibility from '../components/HeroeAccesibility.astro';
 ---
 
 <Layout title="Welcome to Travel Roulette.">
@@ -35,6 +36,10 @@ import Features from '../components/Features.astro';
     {icon: "bi bi-compass", title: "Libertad para Explorar", content: "Descubre nuevos horizontes sin restricciones. Con Travell Roullet, tu aventura no tiene límites ni fronteras."}
   ]}
 />
-
-
+  <HeroeAccesibility 
+    title= "Compromiso con la calidad, usabilidad y accesibilidad"
+    description = "Trabajamos duro para garantizar que nuestro sitio web sea accesible para todas las personas, incluidas aquellas con discapacidades, y que brinde una experiencia de usuario excepcional a todos nuestros visitantes. Para más información sobre nuestras prácticas y políticas en estos aspectos, visita nuestra página de acesibilidad."
+    btnPrimaryText='Políticas de Calidad y Accesibilidad'
+    btnPrimaryLink='/accesibility'
+  />
 </Layout>

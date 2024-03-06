@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Features from '../components/Features.astro';
+---
+<Layout title="Accesibilidad">
+    <Features 
+      content="En Travel Roulette, nos comprometemos a seguir las mejores prácticas de accesibilidad para garantizar que nuestro sitio web cumpla con las normas de accesibilidad web WCAG. Nuestro objetivo es proporcionar una experiencia de usuario excepcional a todos nuestros visitantes, independientemente de sus capacidades."
+      subcontent="Descubre cómo podemos convertir tu próxima aventura en una experiencia inolvidable."
+      btnText="Inicio"
+      btnLink="/"
+      features={[
+        {icon: "bi bi-eye", title: "Perceptible", content: "Aseguramos que nuestro contenido sea fácilmente perceptible para todos los usuarios, incluidos aquellos con discapacidades visuales o auditivas."},
+        {icon: "bi bi-cursor", title: "Operable", content: "Hacemos que todos los elementos interactivos y funciones del sitio web sean fáciles de operar mediante varios dispositivos de entrada."},
+        {icon: "bi bi-book", title: "Comprensible", content: "Nos esforzamos por hacer que el contenido y la navegación sean comprensibles para todos los usuarios, incluidos aquellos con discapacidades cognitivas."},
+        {icon: "bi bi-layers", title: "Robusto", content: "Desarrollamos el sitio web de manera que sea compatible con diferentes tecnologías de asistencia y plataformas."}
+      ]}
+    />
+  </Layout>
+  
