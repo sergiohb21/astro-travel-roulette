@@ -1,10 +1,10 @@
 ---
   const navData = [
+  { text: 'Mapa del sitio', href: '/sitemap' },
   { text: 'Inicio', href: '/' },
   { text: 'Acerca de', href: '/about' },
   { text: 'Contacto', href: '/contact' },
-  { text: 'Explora', href: '/explora' },
-  { text: 'Mapa del sitio', href: '/sitemap' }
+  { text: 'Explora', href: '/explora' }
 ];
 
 
@@ -42,11 +42,14 @@ const userName = "Sergio";
             <p class="nav-link mb-0">Hola, {userName}</p>
           </li>
         ) : (
-          <li class="nav-item">
-            <a href="/login" class="nav-link">Inicia Sesión</a>
-          </li>
-          <li class="nav-item">
-            <a href="/register" class="nav-link">Regístrate</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i> Iniciar Sesión
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/login">Iniciar Sesión</a></li>
+              <li><a class="dropdown-item" href="/register">Regístrate</a></li>
+            </ul>
           </li>
         )}
       </ul>

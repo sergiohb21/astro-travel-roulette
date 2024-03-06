@@ -5,13 +5,24 @@ const socialIcons = [
   { icon: "bi-instagram", link: "https://www.instagram.com/" },
 ];
 ---
-<footer class="w-100 d-flex align-items-center justify-content-center flex-wrap bg-white">
-  <p class="fs-5 px-3 pt-3">Travel Roulette. &copy; Todos Los Derechos Reservados 2024</p>
-  <div id="iconos">
-    {socialIcons.map((socialIcon) => (
-      <a href={socialIcon.link} class="text-dark me-3">
-        <i class={`bi ${socialIcon.icon}`}></i>
-      </a>
-    ))}
+<footer class="footer bg-white py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="fs-5 mb-0">Travel Roulette. &copy; Todos Los Derechos Reservados 2024</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="/accesibility" class="text-dark me-3">
+          <i class="bi bi-shield"></i> Accesibilidad
+        </a>
+        <div id="iconos">
+          {socialIcons.map((socialIcon) => (
+            <a href={socialIcon.link} class="text-dark me-3">
+              <i class={`bi ${socialIcon.icon}`}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
