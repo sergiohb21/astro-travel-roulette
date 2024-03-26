@@ -1,6 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import '../styles/register-login.css';
+
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+  return redirect("/index");
+}
 ---
 <Layout title="Login">
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
@@ -10,7 +19,7 @@ import '../styles/register-login.css';
             <p class="col-lg-10 fs-4">Iniciar sesión es el camino hacia una experiencia única. Accede y desbloquea beneficios exclusivos.</p>
           </div>
           <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+            <form action="/api/auth/register" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Dirección de email</label>

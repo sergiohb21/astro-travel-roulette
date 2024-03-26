@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import Layout from "../layouts/Layout"
+import React, { useState } from '@astrojs/react';
 import CardForm from "../components/CardForm"
 
-const Explora = () => {
+export default function Explora () {
     const [step, setStep] = useState(0);
     const [selectedOptions, setSelectedOptions] = useState([]);
 
@@ -63,7 +62,6 @@ const Explora = () => {
     }
 
     return (
-        <Layout title="Explora">
             <div className="container px-4 py-5" id="custom-cards">
                 <h1 className="pb-2">Buscamos un viaje hecho a tu medida</h1>
                 <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
@@ -93,11 +91,9 @@ const Explora = () => {
                     )}
                 </div>
             </div>
-        </Layout>
     );
 }
 
-export default Explora;
 
 
 
