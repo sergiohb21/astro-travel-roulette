@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import CardForm from "../components/CardForm.astro";
+import Explora1  from '../pages/Explora.jsx'
 
 const steps = [
         {
@@ -52,6 +53,7 @@ const steps = [
     ];
 ---
 <Layout title="Explora">
+    <Explora1 />
     <div class="container px-4 py-5 mt-5" id="custom-cards">
         {steps.map((step)=> 
             <div>
